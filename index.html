@@ -1,1 +1,41 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        // computerChoice() is a function which generates a pseudorandom number between 
+        // 1 and 3 (randomNumber), and uses a switch statement to return 'rock', 'paper', or 'scissors',
+        // with each choice corresponding to the possible values of  'randomNumber'
+        
+        function computerChoice() {
+            let randomNumber = Math.floor(Math.random() * 3) + 1;
+            switch (randomNumber) {
+                case 1:
+                    return "rock";
+                    break;
+                case 2:
+                    return "paper";
+                    break;
+                case 3: 
+                    return "scissors";
+                    break;
+                default:
+                    console.log("Error: see \'computerChoice\' in index.html");
+            }
+        }
+
+        // for testing, remove once project is completed
+        for (let i = 0; i < 10; i++) {
+            console.log(computerChoice());
+        }
+        
+    </script>
+</body>
+</html>
