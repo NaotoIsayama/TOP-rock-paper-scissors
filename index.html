@@ -31,6 +31,17 @@
             }
         }
 
+        function playerChoice() {
+            let choice = prompt("Choose rock, paper, or scissors: ");
+            choice.toLowerCase();
+            if (choice === 'rock' || choice ==='paper' || choice ==='scissors') {
+                return choice.toLowerCase();
+            }
+            else {
+                console.log("Invalid input");
+            }
+        }
+
         // for testing, remove once project is completed
         for (let i = 0; i < 10; i++) {
             console.log(computerChoice());
