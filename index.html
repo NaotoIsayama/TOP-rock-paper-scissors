@@ -10,13 +10,16 @@
 <body>
     <script>
         
-        // computerChoice() is a function which generates a pseudorandom number between 
+        // getComputerChoice() is a function which generates a pseudorandom number between 
         // 1 and 3 (randomNumber) with each choice corresponding to rock, paper,
         // and scissors respectively.
         
         function getComputerChoice() {
             return Math.floor(Math.random() * 3) + 1;
         }
+
+        // getPlayerChoice() is a function which uses the 'prompt' feature to get input from the user.
+        // The input is converted to lowercase, validated, and then returned.
 
         function getPlayerChoice() {
             let choice = prompt("Choose rock, paper, or scissors: ");
@@ -29,7 +32,8 @@
             }
         }
 
-        // Driver code
+        // playGame() is a function which uses a 'while' loop to play rock, paper, scissors in a best of five.
+        // Once a winner is determined, a congratulations message is displayed and the game is terminated.
 
         function playGame() {
             let playerScore=0, computerScore=0, playerChoice, computerChoice;
