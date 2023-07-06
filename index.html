@@ -6,100 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <script>
-        
-        // getComputerChoice() is a function which generates a pseudorandom number between 
-        // 1 and 3 (randomNumber) with each choice corresponding to rock, paper,
-        // and scissors respectively.
-        
-        function getComputerChoice() {
-            return Math.floor(Math.random() * 3) + 1;
-        }
-
-        // getPlayerChoice() is a function which uses the 'prompt' feature to get input from the user.
-        // The input is converted to lowercase, validated, and then returned.
-
-        function getPlayerChoice() {
-            let choice = prompt("Choose rock, paper, or scissors: ");
-            choice.toLowerCase();
-            if (choice === 'rock' || choice ==='paper' || choice ==='scissors') {
-                return choice;
-            }
-            else {
-                console.log("Invalid input");
-            }
-        }
-
-        // playGame() is a function which uses a 'while' loop to play rock, paper, scissors in a best of five.
-        // Once a winner is determined, a congratulations message is displayed and the game is terminated.
-
-        function playGame() {
-            let playerScore=0, computerScore=0, playerChoice, computerChoice;
-            while (playerScore < 3 && computerScore < 3) {
-                playerChoice = getPlayerChoice();
-                computerChoice = getComputerChoice();
-                switch(computerChoice) {
-                    case 1: // Computer chooses rock
-                        if (playerChoice === 'rock') {
-                            console.log(`You both chose rock! No points given. The score is ${playerScore}-${computerScore}`);
-                            break;
-                        }
-                        if (playerChoice === 'paper') {
-                            playerScore++;
-                            console.log(`You chose paper, computer chose rock. The score is ${playerScore}-${computerScore}`);
-                            break;
-                        }
-                        if (playerChoice === 'scissors') {
-                            computerScore++;
-                            console.log(`You chose scissors, computer chose rock. The score is ${playerScore}-${computerScore}`);
-                            break;
-                        }
-                    case 2: // Computer chooses paper
-                        if (playerChoice === 'rock') {
-                            computerScore++;
-                            console.log(`You chose rock, computer chose paper. The score is ${playerScore}-${computerScore}`);
-                            break;
-                        }
-                        if (playerChoice === 'paper') {
-                            playerScore++;
-                            console.log(`You both chose paper! No points given. The score is ${playerScore}-${computerScore}`);
-                            break;
-                        }
-                        if (playerChoice === 'scissors') {
-                            playerScore++;
-                            console.log(`You chose scissors, computer chose paper. The score is ${playerScore}-${computerScore}`);
-                            break;
-                        }
-                    case 3: // Computer chooses scissors
-                        if (playerChoice === 'rock') {
-                            playerScore++;
-                            console.log(`You chose rock, computer chose scissors. The score is ${playerScore}-${computerScore}`);
-                            break;
-                        }
-                        if (playerChoice === 'paper') {
-                            computerScore++;
-                            console.log(`You chose paper, computer chose scissors. The score is ${playerScore}-${computerScore}`);
-                            break;
-                        }
-                        if (playerChoice === 'scissors') {
-                            console.log(`You both chose scissors! No points given. The score is ${playerScore}-${computerScore}`);
-                            break;
-                        }
-                }
-            }
-            
-            if (playerScore > computerScore) {
-                console.log('Congratulations! You won!');
-            }
-            else {
-                console.log('Computer wins!')
-            }
-        }
-
-        playGame();
-    
-    </script>
+    <div class='buttonContainer'>
+        <button class='buttonRock'>Rock</button>
+        <button class='buttonPaper'>Paper</button>
+        <button class='buttonScissors'>Scissors</button>
+    </div>
+    <div class='scoreBoard'>
+    </div>
+    <div class='messageBox'>
+    </div>
 </body>
 </html>
